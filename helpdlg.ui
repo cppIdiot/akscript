@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>helpDlg</class>
+ <widget class="QDialog" name="helpDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>509</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>帮助</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border:1px solid;</string>
+  </property>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>491</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+    </font>
+   </property>
+   <property name="cursor" stdset="0">
+    <cursorShape>ForbiddenCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid;</string>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'新宋体'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun'; font-size:14pt;&quot;&gt;脚本使用注意事项&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;1、使用&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun'; color:#ff0000;&quot;&gt;雷神模拟器&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;，窗口不做任何变动，&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun'; color:#ff0000;&quot;&gt;1920x1080屏幕分辨率&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun'; color:#00ff00;&quot;&gt;如果不是的话可以自己摸索参数进行设置，具体参数只需要在每个按钮所对应的参数设置处进行更改即可&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;2、每个要刷的关卡像素位置可能会不同，若不对的话可以更改select_level_x || select_level_y及其他选项的数值&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;3、若窗口名称不一样，可以通过更改窗口名称进行统一&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;4、本脚本全程在QT进行编写，源码github地址稍后放出&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;5、关卡计时从&lt;/span&gt;&lt;span style=&quot; font-family:'SimSun'; color:#ff0000;&quot;&gt;脚本点击开始作战按钮之后开始计时一直到结算页面完全出现完毕结束&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;6、程序默认开始的点击点条件为：从目标关卡偏左的地方先点击一下目标关卡出现右侧浮动窗口之后启动该程序&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;7、该程序作为过渡产物，最终产品作者希望能够在安卓上面进行&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="overwriteMode">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>270</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit in 2020-8-6</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
