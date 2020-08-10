@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>305</width>
-    <height>239</height>
+    <width>291</width>
+    <height>321</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>200</y>
+     <x>40</x>
+     <y>280</y>
      <width>191</width>
      <height>32</height>
     </rect>
@@ -34,25 +34,36 @@
     <rect>
      <x>0</x>
      <y>10</y>
-     <width>301</width>
-     <height>171</height>
+     <width>191</width>
+     <height>181</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="costHeal">
       <property name="font">
        <font>
-        <family>楷体</family>
-        <pointsize>13</pointsize>
+        <family>Arial</family>
+        <pointsize>14</pointsize>
        </font>
-      </property>
-      <property name="text">
-       <string>消耗时间</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="3" column="2">
+     <widget class="QPushButton" name="endr">
+      <property name="text">
+       <string>结束计时</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="startr">
+      <property name="text">
+       <string>开始计时</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
      <widget class="QLineEdit" name="costTime">
       <property name="font">
        <font>
@@ -62,16 +73,29 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="3">
-     <widget class="QLabel" name="label_3">
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_4">
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>18</pointsize>
+        <family>楷体</family>
+        <pointsize>13</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>(S)</string>
+       <string>消耗理智</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>楷体</family>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>消耗时间</string>
       </property>
      </widget>
     </item>
@@ -99,6 +123,92 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>230</y>
+     <width>110</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>楷体</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>是否为剿灭</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="yesButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>200</y>
+     <width>115</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>是</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="noButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>240</y>
+     <width>115</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>否</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="REtime">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>100</y>
+     <width>81</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑 Light</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>计时处</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>60</y>
+     <width>40</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>(S)</string>
+   </property>
   </widget>
  </widget>
  <resources/>
