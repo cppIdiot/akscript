@@ -40,7 +40,7 @@ void timeRecordDlg::on_buttonBox_clicked(QAbstractButton *button)
     if(ui->buttonBox->button(QDialogButtonBox::Ok) == button)
     {
         configInWrite->beginGroup(name);
-        configInWrite->setValue("levelCostTime", ctime.toInt());
+        configInWrite->setValue("levelCostTime", ctime.toInt() + 5);
         configInWrite->setValue("costHeal", cHeal.toInt());
         switch(ButtonG->checkedId()){
             case 0:
@@ -51,6 +51,8 @@ void timeRecordDlg::on_buttonBox_clicked(QAbstractButton *button)
         configInWrite->endGroup();
         QMessageBox::information(this, "记录成功", "信息已经成功记录到: " + path + "/levelTime.ini");
         //delete configInWrite;
+
+        emit sendAddInfo();
         this->exec();
     }
 

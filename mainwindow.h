@@ -93,6 +93,10 @@ private slots:
 
     void on_updateinfo_clicked();
 
+    void recvDelInfo();     //接收来自显示作战详情窗口的信号用来刷新下拉选框
+
+    void recvAddInfo();     //接受来自记录作战详情子窗口的信号来刷新下拉选框
+
 private:
     Ui::MainWindow *ui;                 //  主界面指针
 
@@ -110,7 +114,13 @@ private:
 
     timeRecordDlg *trd = new timeRecordDlg(this);//记录关卡时间信息子界面
 
-    timeShowDlg *tsd = new timeShowDlg(this);   //显示有记录的关卡信息子界面
+    timeShowDlg *tsd = new timeShowDlg(this);   //显示有记录的关卡信息子界面\
+
+    int levelCostTime;
+
+    int levelCostHeal;
+
+    int Ismo;
 
 };
 

@@ -24,151 +24,6 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="User_exp">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>121</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>距离升级相差经验</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_exp_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>80</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>99999</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="User_stone">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>当前剩余源石</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_stone_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>120</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="User_60">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>160</y>
-      <width>141</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>当前剩余60理智合剂</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_60_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>160</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_100_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>200</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="User_100">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>200</y>
-      <width>151</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>当前剩余100理智合剂</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="User_costime">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>240</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>关卡消耗时间</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_costime_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>240</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="result_textarea">
     <property name="geometry">
      <rect>
@@ -180,93 +35,6 @@
     </property>
     <property name="placeholderText">
      <string>刷图结果会在本文本框中显示</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="User_maxheal">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>280</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>当前等级最大理智</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_maxheal_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>280</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>131</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="User_costheal">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>320</y>
-      <width>91</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>关卡消耗理智</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_costheal_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>320</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>18</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="ISMO">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>360</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>是否为剿灭作战</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="ISMO_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>360</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
     </property>
    </widget>
    <widget class="QPushButton" name="start">
@@ -324,14 +92,14 @@
    <widget class="QLabel" name="version">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>510</y>
-      <width>141</width>
+      <x>550</x>
+      <y>500</y>
+      <width>161</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>当前版本：Beta 0.5</string>
+     <string>当前版本：Beta 0.6.4</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Exit">
@@ -350,41 +118,12 @@
      <string>退出脚本</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>400</y>
-      <width>91</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>当前剩余理智</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="User_leftheal_label">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>400</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
-    </property>
-    <property name="text">
-     <string>131</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>711</width>
+      <width>715</width>
       <height>41</height>
      </rect>
     </property>
@@ -500,6 +239,130 @@
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>240</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="User_exp">
+       <property name="text">
+        <string>距离升级相差经验</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="User_stone">
+       <property name="text">
+        <string>当前剩余源石</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="User_60">
+       <property name="text">
+        <string>当前剩余60理智合剂</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="User_100">
+       <property name="text">
+        <string>当前剩余100理智合剂</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="User_maxheal">
+       <property name="text">
+        <string>当前等级最大理智</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>当前剩余理智</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="User_exp_label">
+       <property name="styleSheet">
+        <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
+       </property>
+       <property name="text">
+        <string>99999</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="User_stone_label">
+       <property name="styleSheet">
+        <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="User_60_label">
+       <property name="styleSheet">
+        <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="User_100_label">
+       <property name="styleSheet">
+        <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="User_maxheal_label">
+       <property name="styleSheet">
+        <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
+       </property>
+       <property name="text">
+        <string>131</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="User_leftheal_label">
+       <property name="styleSheet">
+        <string notr="true">font: 63 9pt &quot;Bahnschrift SemiBold&quot;;</string>
+       </property>
+       <property name="text">
+        <string>131</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>选择关卡</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QComboBox" name="selectLevevl"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

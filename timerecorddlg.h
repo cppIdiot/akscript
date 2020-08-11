@@ -40,6 +40,10 @@ private:
     int step;
 
     bool isStart;
+
+signals:
+
+    void sendAddInfo();     //给主窗口发送添加信息时候的更新信号
 };
 
 #endif // TIMERECORDDLG_H

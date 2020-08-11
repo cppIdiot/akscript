@@ -34,7 +34,7 @@
     <rect>
      <x>0</x>
      <y>10</y>
-     <width>191</width>
+     <width>195</width>
      <height>181</height>
     </rect>
    </property>
@@ -196,7 +196,7 @@
     <rect>
      <x>210</x>
      <y>60</y>
-     <width>40</width>
+     <width>81</width>
      <height>35</height>
     </rect>
    </property>
@@ -207,7 +207,7 @@
     </font>
    </property>
    <property name="text">
-    <string>(S)</string>
+    <string>(+5S)</string>
    </property>
   </widget>
  </widget>

@@ -4,6 +4,11 @@
 #include <QDialog>
 #include <QSettings>
 #include <QMessageBox>
+#include <QTableView>
+#include <QHeaderView>
+#include <QStandardItemModel>
+
+#include "timerecorddlg.h"
 
 namespace Ui {
 class timeShowDlg;
@@ -18,12 +23,16 @@ public:
     ~timeShowDlg();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_delButton_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_flushT_clicked();
+
+signals:
+    void sendDelInfo();     //当删除操作完成时给主窗口发送一个信号
 
 private:
     Ui::timeShowDlg *ui;
+
 };
 
 #endif // TIMESHOWDLG_H

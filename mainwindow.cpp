@@ -12,6 +12,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 {
     ui->setupUi(this);
     ui->debugtext->hide();
+
+    connect(trd, SIGNAL(sendAddInfo()), this, SLOT(recvAddInfo()));
+    connect(tsd, SIGNAL(sendDelInfo()), this, SLOT(recvDelInfo()));
+
+    QString path = QCoreApplication::applicationDirPath();
+    QSettings *configInWrite = new QSettings(path + "/levelTime.ini", QSettings::IniFormat);
+    QStringList sectionList = configInWrite->childGroups();
+    foreach (QString var, sectionList) {
+        ui->selectLevevl->addItem(var);
+    }
+
 }
 
 MainWindow::~MainWindow()
@@ -39,12 +50,9 @@ void MainWindow::on_reset_clicked(bool checked)
     //全部转为初始设置
     ui->User_60_label->setText("0");
     ui->User_100_label->setText("0");
-    ui->User_costheal_label->setText("18");
-    ui->User_costime_label->setText("0");
     ui->User_exp_label->setText("99999");
     ui->User_maxheal_label->setText("131");
     ui->User_stone_label->setText("0");
-    ui->ISMO_label->setText("0");
     ui->User_leftheal_label->setText(ui->User_maxheal_label->text());
 }
 
@@ -89,7 +97,7 @@ void MainWindow::clickLap(int sign, bool MO)
         clickHere(select_start_x, select_start_y);
     }
     clickHere(select_go_x, select_go_y);
-    QTest::qWait(ui->User_costime_label->text().toInt() * 1000);
+    QTest::qWait(this->levelCostTime * 1000);
     if (MO == true)
     {
         clickHere(select_start_x, select_start_y);
@@ -100,20 +108,28 @@ void MainWindow::clickLap(int sign, bool MO)
 
 void MainWindow::start()
 {
+    QString path = QCoreApplication::applicationDirPath();
+    QSettings *configInWrite = new QSettings(path + "/levelTime.ini", QSettings::IniFormat);
+
+    configInWrite->beginGroup(ui->selectLevevl->itemText(ui->selectLevevl->currentIndex()));
+    this->levelCostTime = configInWrite->value("levelCostTime").toInt();
+    this->levelCostHeal = configInWrite->value("costHeal").toInt();
+    this->Ismo = configInWrite->value("ISMO").toBool();
+
     int Ttime = 0;
     int loop = 1;
     bool ok[8];
 
     int _health = ui->User_leftheal_label->text().toInt(&ok[0]);     //用户当前剩余理智
-    int _level_cost = ui->User_costheal_label->text().toInt(&ok[1]); //用户当前关卡消耗理智
-    int _stone = ui->User_stone_label->text().toInt(&ok[2]);         //用户当前剩余源石
-    int MAXHEAL = ui->User_maxheal_label->text().toInt(&ok[3]);      //用户当前等级最大理智
-    int add_60 = ui->User_60_label->text().toInt(&ok[4]);            //用户当前剩余60理智合剂数目
-    int add_100 = ui->User_100_label->text().toInt(&ok[5]);          //用户当前剩余100理智合剂数目
-    int _exp = ui->User_exp_label->text().toInt(&ok[6]);             //用户当前距离升级相差经验数
-    int ismo = ui->ISMO_label->text().toInt(&ok[7]);                 //用户当前关卡是否为剿灭
+    int _level_cost = this->levelCostHeal;                           //用户当前关卡消耗理智
+    int _stone = ui->User_stone_label->text().toInt(&ok[1]);         //用户当前剩余源石
+    int MAXHEAL = ui->User_maxheal_label->text().toInt(&ok[2]);      //用户当前等级最大理智
+    int add_60 = ui->User_60_label->text().toInt(&ok[3]);            //用户当前剩余60理智合剂数目
+    int add_100 = ui->User_100_label->text().toInt(&ok[4]);          //用户当前剩余100理智合剂数目
+    int _exp = ui->User_exp_label->text().toInt(&ok[5]);             //用户当前距离升级相差经验数
+    int ISMO = this->Ismo;                                           //用户当前关卡是否为剿灭
 
-    for(int i = 0;i < 8;i++){
+    for(int i = 0;i < 6;i++){
         if(ok[i] == false){
             QMessageBox::critical(0,
                                   "数据异常！", "请检查你输入数据的正确性。",
@@ -123,15 +139,6 @@ void MainWindow::start()
         }
     }
 
-    bool ISMO;
-    if (ismo == 0)
-    {
-        ISMO = false;
-    }
-    else
-    {
-        ISMO = true;
-    }
     while (1)
     {
         time_t time1 = time(0);
@@ -190,13 +197,6 @@ void MainWindow::start()
                       "恢复理智时间(6:00)：" + QString::number(Ttime) + "(sec)\n";
         ui->result_textarea->setTextColor(Qt::green);
         ui->result_textarea->append(ptr);
-            /*      !改输出到文本框中!
-                cout << "第" << loop << "次刷本，本次刷完之后：" << endl
-                     << "体力剩余:" << _health << endl
-                     << "源石剩余：" << _stone << endl
-                     << "60理智合剂剩余：" << add_60 << endl
-                     << "100理智合剂剩余：" << add_100 << endl << endl;
-                     */
         loop++;
     }
 
@@ -331,4 +331,24 @@ void MainWindow::sleepRecv(QString data){
 
 void MainWindow::winRecv(QString data){
     handle = reinterpret_cast<LPCWSTR>(data.utf16());
+}
+
+void MainWindow::recvAddInfo(){
+    ui->selectLevevl->clear();
+    QString path = QCoreApplication::applicationDirPath();
+    QSettings *configInWrite = new QSettings(path + "/levelTime.ini", QSettings::IniFormat);
+    QStringList sectionList = configInWrite->childGroups();
+    foreach (QString var, sectionList) {
+        ui->selectLevevl->addItem(var);
+    }
+}
+
+void MainWindow::recvDelInfo(){
+    ui->selectLevevl->clear();
+    QString path = QCoreApplication::applicationDirPath();
+    QSettings *configInWrite = new QSettings(path + "/levelTime.ini", QSettings::IniFormat);
+    QStringList sectionList = configInWrite->childGroups();
+    foreach (QString var, sectionList) {
+        ui->selectLevevl->addItem(var);
+    }
 }
