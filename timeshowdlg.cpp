@@ -30,6 +30,7 @@ timeShowDlg::timeShowDlg(QWidget *parent) :
         configInWrite->endGroup();
         }
     ui->REtable->setModel(model);
+    delete configInWrite;
 }
 
 timeShowDlg::~timeShowDlg()
@@ -56,6 +57,7 @@ void timeShowDlg::on_delButton_clicked()
         QMessageBox::information(this, "删除失败", "未找到所要删除的关卡");
         this->exec();
     }
+    delete configInWrite;
     emit sendDelInfo();
 }
 
@@ -85,4 +87,5 @@ void timeShowDlg::on_flushT_clicked(){
         }
 
     ui->REtable->setModel(model);
+    delete configInWrite;
 }

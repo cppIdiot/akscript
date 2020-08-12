@@ -22,7 +22,31 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     foreach (QString var, sectionList) {
         ui->selectLevevl->addItem(var);
     }
+    delete configInWrite;
 
+    QSettings *configInWrites = new QSettings(path + "/settings.ini", QSettings::IniFormat);
+    configInWrites->beginGroup("PIXEL");
+    this->select_start_x = configInWrites->value("start_x").toInt();
+    this->select_start_y = configInWrites->value("start_y").toInt();
+    this->select_go_x = configInWrites->value("go_x").toInt();
+    this->select_go_y = configInWrites->value("go_y").toInt();
+    this->select_end_x = configInWrites->value("end_x").toInt();
+    this->select_end_y = configInWrites->value("end_y").toInt();
+    this->select_add_x = configInWrites->value("add_x").toInt();
+    this->select_add_y = configInWrites->value("add_y").toInt();
+    configInWrites->endGroup();
+
+    configInWrites->beginGroup("WINNAME");
+    this->handle = reinterpret_cast<LPCWSTR>(configInWrites->value("name").toString().utf16());
+    configInWrites->endGroup();
+
+    configInWrites->beginGroup("SLEEP");
+    this->cSleep = configInWrites->value("clickSleep").toInt();
+    configInWrites->endGroup();
+
+    delete configInWrites;
+
+    //QMessageBox::information(this, "製作聲明", "有任何疑問請聲明作者，作者163郵箱為: xxxxxx@163.com");
 }
 
 MainWindow::~MainWindow()
@@ -115,7 +139,7 @@ void MainWindow::start()
     this->levelCostTime = configInWrite->value("levelCostTime").toInt();
     this->levelCostHeal = configInWrite->value("costHeal").toInt();
     this->Ismo = configInWrite->value("ISMO").toBool();
-
+    delete configInWrite;
     int Ttime = 0;
     int loop = 1;
     bool ok[8];
@@ -279,12 +303,58 @@ void MainWindow::on_aboutButton_clicked()
 
 void MainWindow::on_input_clicked()
 {
+    QString path = QCoreApplication::applicationDirPath();
+    QSettings *configInWrite = new QSettings(path + "/settings.ini", QSettings::IniFormat);
+    configInWrite->beginGroup("PIXEL");
+    this->select_start_x = 1615;
+    this->select_start_y = 902;
+    this->select_go_x = 1538;
+    this->select_go_y = 623;
+    this->select_end_x = 1538;
+    this->select_end_y = 623;
+    this->select_add_x = 1526;
+    this->select_add_y = 826;
+    configInWrite->endGroup();
 
+    configInWrite->beginGroup("WINNAME");
+    this->handle = L"夜神模拟器";
+    configInWrite->endGroup();
+
+    configInWrite->beginGroup("SLEEP");
+    this->cSleep = 3;
+    configInWrite->endGroup();
+
+    delete configInWrite;
+
+    QMessageBox::information(this, "初始化配置成功", "已經初始化 " + path + "/settings.ini");
 }
 
 void MainWindow::on_output_clicked()
 {
+    QString path = QCoreApplication::applicationDirPath();
+    QSettings *configInWrite = new QSettings(path + "/settings.ini", QSettings::IniFormat);
+    configInWrite->beginGroup("PIXEL");
+    configInWrite->setValue("start_x", select_start_x);
+    configInWrite->setValue("start_y", select_start_y);
+    configInWrite->setValue("go_x", select_go_x);
+    configInWrite->setValue("go_y", select_go_y);
+    configInWrite->setValue("end_x", select_end_x);
+    configInWrite->setValue("end_y", select_end_y);
+    configInWrite->setValue("add_x", select_add_x);
+    configInWrite->setValue("add_y", select_add_y);
+    configInWrite->endGroup();
 
+    configInWrite->beginGroup("WINNAME");
+    configInWrite->setValue("name", QString::fromStdWString(handle));
+    configInWrite->endGroup();
+
+    configInWrite->beginGroup("SLEEP");
+    configInWrite->setValue("clickSleep", cSleep);
+    configInWrite->endGroup();
+
+    delete configInWrite;
+
+    QMessageBox::information(this, "导出至文件成功", "文件settings.ini已经成功存入 " + path + "/");
 }
 
 void MainWindow::pixelRecv(QString data){

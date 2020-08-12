@@ -50,10 +50,10 @@ void timeRecordDlg::on_buttonBox_clicked(QAbstractButton *button)
         }
         configInWrite->endGroup();
         QMessageBox::information(this, "记录成功", "信息已经成功记录到: " + path + "/levelTime.ini");
-        //delete configInWrite;
+        delete configInWrite;
 
         emit sendAddInfo();
-        this->exec();
+        this->show();
     }
 
     else if(ui->buttonBox->button(QDialogButtonBox::Cancel) == button)

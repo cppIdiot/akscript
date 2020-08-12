@@ -32,14 +32,21 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>10</y>
-     <width>195</width>
-     <height>181</height>
+     <x>10</x>
+     <y>50</y>
+     <width>181</width>
+     <height>141</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="5" column="2">
+    <item row="2" column="0">
+     <widget class="QPushButton" name="startr">
+      <property name="text">
+       <string>开始计时</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
      <widget class="QLineEdit" name="costHeal">
       <property name="font">
        <font>
@@ -49,21 +56,14 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
+    <item row="2" column="2">
      <widget class="QPushButton" name="endr">
       <property name="text">
        <string>结束计时</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="startr">
-      <property name="text">
-       <string>开始计时</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
+    <item row="1" column="2">
      <widget class="QLineEdit" name="costTime">
       <property name="font">
        <font>
@@ -73,7 +73,7 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
+    <item row="4" column="0">
      <widget class="QLabel" name="label_4">
       <property name="font">
        <font>
@@ -86,7 +86,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="0">
      <widget class="QLabel" name="label_2">
       <property name="font">
        <font>
@@ -96,29 +96,6 @@
       </property>
       <property name="text">
        <string>消耗时间</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>楷体</family>
-        <pointsize>13</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>关卡名称</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLineEdit" name="levelName">
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>14</pointsize>
-       </font>
       </property>
      </widget>
     </item>
@@ -194,7 +171,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>200</x>
      <y>60</y>
      <width>81</width>
      <height>35</height>
@@ -208,6 +185,41 @@
    </property>
    <property name="text">
     <string>(+5S)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>91</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>楷体</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>关卡名称</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="levelName">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>171</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
   </widget>
  </widget>
