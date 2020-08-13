@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <windows.h>
 #include <QSettings>
+#include <QFileInfo>
 #include "helpdlg.h"
 #include "aboutmedlg.h"
 #include "pixeldlg.h"

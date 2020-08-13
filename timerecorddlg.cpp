@@ -33,12 +33,12 @@ void timeRecordDlg::on_buttonBox_clicked(QAbstractButton *button)
     bool ok1, ok2;
     ctime.toInt(&ok1);
     cHeal.toInt(&ok2);
-    if(!ok1 || !ok2){
-        QMessageBox::critical(this, "数据异常", "没有记录数据, 请检查字段输入的值是否正确");
-        return ;
-    }
     if(ui->buttonBox->button(QDialogButtonBox::Ok) == button)
     {
+        if(!ok1 || !ok2){
+            QMessageBox::critical(this, "数据异常", "没有记录数据, 请检查字段输入的值是否正确");
+            return ;
+        }
         configInWrite->beginGroup(name);
         configInWrite->setValue("levelCostTime", ctime.toInt() + 5);
         configInWrite->setValue("costHeal", cHeal.toInt());
@@ -53,7 +53,7 @@ void timeRecordDlg::on_buttonBox_clicked(QAbstractButton *button)
         delete configInWrite;
 
         emit sendAddInfo();
-        this->show();
+        this->exec();
     }
 
     else if(ui->buttonBox->button(QDialogButtonBox::Cancel) == button)

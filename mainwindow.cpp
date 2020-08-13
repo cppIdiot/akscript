@@ -25,26 +25,33 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     delete configInWrite;
 
     QSettings *configInWrites = new QSettings(path + "/settings.ini", QSettings::IniFormat);
-    configInWrites->beginGroup("PIXEL");
-    this->select_start_x = configInWrites->value("start_x").toInt();
-    this->select_start_y = configInWrites->value("start_y").toInt();
-    this->select_go_x = configInWrites->value("go_x").toInt();
-    this->select_go_y = configInWrites->value("go_y").toInt();
-    this->select_end_x = configInWrites->value("end_x").toInt();
-    this->select_end_y = configInWrites->value("end_y").toInt();
-    this->select_add_x = configInWrites->value("add_x").toInt();
-    this->select_add_y = configInWrites->value("add_y").toInt();
-    configInWrites->endGroup();
+    QString fullPath = path + "/settings.ini";
+    QFileInfo info(fullPath);
+    if(!info.exists()){
+        on_input_clicked();
+    }
+    else{
+        configInWrites->beginGroup("PIXEL");
+        this->select_start_x = configInWrites->value("start_x").toInt();
+        this->select_start_y = configInWrites->value("start_y").toInt();
+        this->select_go_x = configInWrites->value("go_x").toInt();
+        this->select_go_y = configInWrites->value("go_y").toInt();
+        this->select_end_x = configInWrites->value("end_x").toInt();
+        this->select_end_y = configInWrites->value("end_y").toInt();
+        this->select_add_x = configInWrites->value("add_x").toInt();
+        this->select_add_y = configInWrites->value("add_y").toInt();
+        configInWrites->endGroup();
 
-    configInWrites->beginGroup("WINNAME");
-    this->handle = reinterpret_cast<LPCWSTR>(configInWrites->value("name").toString().utf16());
-    configInWrites->endGroup();
+        configInWrites->beginGroup("WINNAME");
+        this->handle = reinterpret_cast<LPCWSTR>(configInWrites->value("name").toString().utf16());
+        configInWrites->endGroup();
 
-    configInWrites->beginGroup("SLEEP");
-    this->cSleep = configInWrites->value("clickSleep").toInt();
-    configInWrites->endGroup();
+        configInWrites->beginGroup("SLEEP");
+        this->cSleep = configInWrites->value("clickSleep").toInt();
+        configInWrites->endGroup();
+        }
 
-    delete configInWrites;
+        delete configInWrites;
 
     //QMessageBox::information(this, "製作聲明", "有任何疑問請聲明作者，作者163郵箱為: xxxxxx@163.com");
 }
@@ -326,7 +333,9 @@ void MainWindow::on_input_clicked()
 
     delete configInWrite;
 
-    QMessageBox::information(this, "初始化配置成功", "已經初始化 " + path + "/settings.ini");
+    QMessageBox::information(this, "初始化配置成功", "已經初始化选项至内存");
+
+    on_output_clicked();
 }
 
 void MainWindow::on_output_clicked()
